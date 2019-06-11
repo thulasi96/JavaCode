@@ -1,0 +1,7 @@
+com\webpage\controllers\Cartcontroller.class
+com\webpage\controllers\Webcontroller.class
+com\webpage\controllers\Paycontroller.class
+com\webpage\controllers\Usercontroller.class
+com\webpage\controllers\Suppliercontroller.class
+com\webpage\controllers\Categorycontroller.class
+com\webpage\controllers\Productcontroller.class
