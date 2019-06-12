@@ -25,11 +25,11 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="<c:url value="/resources/images/Laptop1.jpg"/>" alt="phoenix" style="width:100%;">
+        <img src="<c:url value="/resources/images/Lap1.jpg"/>" alt="phoenix" style="width:100%;">
       </div>
 
       <div class="item">
-        <img src="<c:url value="/resources/images/Laptop.jpg"/>" alt="Nature" style="width:100%;">
+        <img src="<c:url value="/resources/images/Lap2.jpg"/>" alt="Nature" style="width:100%;">
       </div>
     
       

@@ -27,22 +27,39 @@
       <a class="navbar-brand"  href="#">Phoenix</a>
       
     </div>
-    
+    ${sessionScope.loggedIn}
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+    <c:if test="${!sessionScope.loggedIn}">
+       <li class="active"><a href="index">Home</a></li>
+       </c:if>
+       
+       <c:if test="${sessionScope.loggedIn}">
+       	<c:if test="${sessionScope.role='ROLE_ADMIN'}">
       <li><a href="category">Category Management</a></li>
 	<li><a href="supplier">Supplier Management</a></li>
 	<li><a href="product">Product Management</a></li>
+	</c:if>
+	</c:if>
+	<c:if test="${sessionScope.role='ROLE_USER'}">
 	<li><a href="productpage">Products</a></li>
+    </c:if>
     </ul>
+    
     
     
       
    
      <ul class="nav navbar-nav navbar-right">
+     <c:if test="${!sessionScope.loggedIn}">
       <li><a href="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="<c:url value="/login"/>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </c:if>
+    <c:if test="${sessionScope.loggedIn}">
+    <li><a href="#"><span class="glyphicon glyphicon-user"></span>${username}</a></li>
+    <li><a href="<c:url value="/perform_logout"/>"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </c:if>
     </ul>
+    
   </div>
     
   </div>
