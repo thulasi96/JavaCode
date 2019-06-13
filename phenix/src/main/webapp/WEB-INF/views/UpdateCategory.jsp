@@ -1,4 +1,4 @@
-<%@include file="header.jsp"%>
+<%@include file="adminhome.jsp"%>
 
 
 <form action="<c:url value="/UpdateCategory"/>" method="post">

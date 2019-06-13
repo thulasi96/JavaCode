@@ -1,4 +1,5 @@
-<%@include file="header.jsp"%>
+<%@include file="userhome.jsp"%>
+
 <html>
 <head>
 </head>

@@ -28,6 +28,19 @@ public class Usercontroller
 	@Autowired
 	Userdetaildao userdetailDAO;
 	
+	@RequestMapping("home")
+	public String home(Model m)
+	{
+		return "home";
+	}
+	@RequestMapping("homeus")
+	public String home1(Model m)
+	{
+		return "homeus";
+	}
+	
+	
+	
 	
 	@RequestMapping("/registration")
 	public String register(@RequestParam("firstname")String firstname,@RequestParam("lastname")String lastname,@RequestParam("dob")String dob,@RequestParam("emailId")String emailId,@RequestParam("password")String password,Model m)
@@ -43,8 +56,8 @@ public class Usercontroller
 		
 		return "register";
 	}
-	
-	
+		
+		
 	
 	@RequestMapping("/login_success")
 	public String loginsuccess(HttpSession session,Model m)
@@ -55,7 +68,7 @@ public class Usercontroller
 		SecurityContext secontext=SecurityContextHolder.getContext();
 		Authentication authentication=secontext.getAuthentication();
 		
-
+			
 		String username=authentication.getName();
 		Collection<GrantedAuthority> roles=(Collection<GrantedAuthority>)authentication.getAuthorities();
 		
@@ -72,6 +85,7 @@ public class Usercontroller
 			}
 			else
 			{
+				
 				loggedIn=true;
 				page="userhome";
 				session.setAttribute("loggedIn", loggedIn);
@@ -82,6 +96,8 @@ public class Usercontroller
 		
 		return page;
 	}
+	
+	
 	
 	
 }

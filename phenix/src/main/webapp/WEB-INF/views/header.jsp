@@ -6,65 +6,72 @@
 <html lang="en">
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <title>Welcome</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  
+<title>Welcome</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
-  <div class="container-fluid">
-    <div class="navbar-header">
-    
-      <a class="navbar-brand"  href="#">Phoenix</a>
-      
-    </div>
-    ${sessionScope.loggedIn}
-    <ul class="nav navbar-nav">
-    <c:if test="${!sessionScope.loggedIn}">
-       <li class="active"><a href="index">Home</a></li>
-       </c:if>
-       
-       <c:if test="${sessionScope.loggedIn}">
-       	<c:if test="${sessionScope.role='ROLE_ADMIN'}">
-      <li><a href="category">Category Management</a></li>
-	<li><a href="supplier">Supplier Management</a></li>
-	<li><a href="product">Product Management</a></li>
-	</c:if>
-	</c:if>
-	<c:if test="${sessionScope.role='ROLE_USER'}">
-	<li><a href="productpage">Products</a></li>
-    </c:if>
-    </ul>
-    
-    
-    
-      
-   
-     <ul class="nav navbar-nav navbar-right">
-     <c:if test="${!sessionScope.loggedIn}">
-      <li><a href="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="<c:url value="/login"/>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </c:if>
-    <c:if test="${sessionScope.loggedIn}">
-    <li><a href="#"><span class="glyphicon glyphicon-user"></span>${username}</a></li>
-    <li><a href="<c:url value="/perform_logout"/>"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-    </c:if>
-    </ul>
-    
-  </div>
-    
-  </div>
-</nav>
-  
+		<div class="container-fluid">
+			<div class="navbar-header">
+
+				<a class="navbar-brand" href="#">Phoenix</a>
+
+			</div>
+
+			<ul class="nav navbar-nav">
+				<c:if test="${!sessionScope.loggedIn}">
+					<li class="active"><a href="index.jsp">Home</a></li>
+				</c:if>
+				<c:if test="${sessionScope.loggedIn}">
+				<c:if test="${sessionScope.role=='ROLE_ADMIN'}">
+					<li class="active"><a href="home">AdminHome</a></li>
+				</c:if>
+				</c:if>
+				<c:if test="${sessionScope.loggedIn}">
+				<c:if test="${sessionScope.role=='ROLE_USER'}">
+					<li class="active"><a href="homeus">UserHome</a></li>
+				</c:if>
+				</c:if>
+
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<c:if test="${!sessionScope.loggedIn}">
+					<li><a href="register"><span
+							class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li><a href="<c:url value="/login"/>"><span
+							class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				</c:if>
+				<c:if test="${sessionScope.loggedIn}">
+
+					<li><a href="#"><span class="glyphicon glyphicon-user"></span>${username}</a></li>
+					<li><a href="<c:url value="/perform_logout"/>"><span
+							class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+				</c:if>
+			</ul>
+
+		</div>
+
+		</div>
+	</nav>
+
 
 
 </body>

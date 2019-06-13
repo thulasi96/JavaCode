@@ -28,7 +28,14 @@ public class Cartcontroller
 	@Autowired
 	Productdao productDAO;
 	
-	
+	@RequestMapping(value="/mycart")
+	public String cart1(Model m)
+	{
+		List<Cart>cartList=cartDAO.listCartitems();
+		m.addAttribute("cartList",cartList);
+		m.addAttribute("grandtotal",this.grandtotal(cartList));
+		return "cart";
+	}
 	
 	@RequestMapping(value="/addcart/{productId}")
 	public String showcart(@PathVariable("productId")int productId,Model m,HttpSession session)
