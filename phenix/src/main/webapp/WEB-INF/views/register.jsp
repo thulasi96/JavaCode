@@ -48,7 +48,7 @@
 	
 	<div class="form-group">
 		<label>Username</label>
-		<input type="email" name="username" required class="form-control" placeholder="Username">
+		<input type="username" name="username" required class="form-control" placeholder="Username">
 		<small class="form-text text-muted">We'll never share your username with anyone else.</small>
 	</div> <!-- form-group end.// -->
 	

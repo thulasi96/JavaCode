@@ -1,6 +1,8 @@
 <%@include file="userhome.jsp"%>
 
 
+
+
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-md-4">
@@ -24,15 +26,15 @@
                             <label for="cardNumber">
                             CARD NUMBER</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number"
-                                required autofocus />
+                            <input type="text" class="form-control" Pattern="[0-9]{13,16}" id="cardNumber" placeholder="Valid Card Number"
+                                 autofocus />
                             <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                         </div>
                     </div>
                     <div class='form-row'>
               <div class='form-group cvc required'>
                 <label class='control-label'>CVC</label>
-                <input autocomplete='off' class='form-control card-cvc' required placeholder='ex. 311' size='4' type='text'>
+                <input autocomplete='off' class='form-control card-cvc' Pattern="[0-9]{3,3}" placeholder='ex. 311' size='4' type='text'>
               </div>
               <div class='form-group expiration required'>
                 <label class='control-label'>Expiration</label>

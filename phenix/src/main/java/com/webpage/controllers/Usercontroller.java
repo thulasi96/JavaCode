@@ -27,26 +27,13 @@ public class Usercontroller
 	
 	@Autowired
 	Userdetaildao userdetailDAO;
-	
-	@RequestMapping("home")
-	public String home(Model m)
-	{
-		return "home";
-	}
-	@RequestMapping("homeus")
-	public String home1(Model m)
-	{
-		return "homeus";
-	}
-	
-	
-	
+
 	
 	@RequestMapping("/registration")
-	public String register(@RequestParam("firstname")String firstname,@RequestParam("lastname")String lastname,@RequestParam("dob")String dob,@RequestParam("emailId")String emailId,@RequestParam("password")String password,Model m)
+	public String register(@RequestParam("firstname")String firstname,@RequestParam("lastname")String lastname,@RequestParam("dob")String dob,@RequestParam("username")String username,@RequestParam("password")String password,Model m)
 	{
 		Userdetail userdetail=new Userdetail();
-		userdetail.setEmailId(emailId);
+		userdetail.setUsername(username);
 		userdetail.setDob(dob);
 		userdetail.setFirstname(firstname);
 		userdetail.setLastname(lastname);
@@ -97,7 +84,16 @@ public class Usercontroller
 		return page;
 	}
 	
-	
+	@RequestMapping("home")
+	public String home(Model m)
+	{
+		return "home";
+	}
+	@RequestMapping("homeus")
+	public String home1(Model m)
+	{
+		return "homeus";
+	}	
 	
 	
 }
